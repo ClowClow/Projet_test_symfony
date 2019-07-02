@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}O'F ~ Admin{% endblock %}
+
+{% block body %}
+
+<section class="admin__connect">
+</section>
+  <button class="create"><a href="{{path('of_create')}}">Créer un article</a></button>
+  <button class="modify"><a href="#">Modifier un article</a></button>
+  <button class="delete"><a href="#">Supprimer un article</a></button>
+{% endblock %}

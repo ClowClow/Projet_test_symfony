@@ -1,0 +1,27 @@
+{% extends 'base.html.twig'%}
+{% block title %}O'F ~ Accueil{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset ('css/css/home.css')}}"/>
+{% endblock %}
+
+{% block body %}
+<h1>Bienvenue sur le site de l'association Owlie's Friends</h1>
+</br>
+<h2>Actualités</h2>
+
+<section class="index__articles">
+{% for articles in articles %}
+<h3>{{articles.title}}</h3>
+<div class="metadata">
+  <p>Ecrit le {{ articles.createdAt | date('d/m/Y')}}
+    à {{ articles.createdAt | date('H:i')}}</p>
+</div>
+<div class="content">
+  <img src="{{ articles.image}}"/>
+  {{ articles.content | raw }}
+</div>
+<button class="affiche_actu"><a href="{{ path('blog')}}">Consulter notre blog</a></button>
+
+{% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}O'F{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset("css/css/base.css")}}"/>
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        <ul class="nav">
+          <li class="nav__item"><a href="{{ path('home')}}">Accueil</a></li>
+          <li class="nav__item"><a href ="{{ path('about')}}">A propos</a></li>
+          <li class="nav__item"><a href ="{{ path('adopt')}}">Adopter</a></li>
+          <li class="nav__item"><a href ="#"><img src="/images/logo.png" alt="Logo de l'association"
+          class="logo_principal" width="850px" height="850px"/></a></li>
+          <li class="nav__item"><a href ="{{ path('blog')}}">Blog</a></li>
+          <li class="nav__item"><a href ="{{ path('contact')}}">Contact</a></li>
+          <li class="nav__item"><a href="{{path('app_login')}}">Se connecter</a></li>
+        </ul>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

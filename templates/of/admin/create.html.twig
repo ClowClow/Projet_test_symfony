@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>Créer un article</h1>
+{{ form_start(formArticle)}}
+<div class="form-group">
+  {{ form_row(formArticle.title, { 'label': 'Titre', 'attr': {'placeholder' : "Titre de l'article"}})}}
+</div>
+<div class="form-group">
+  {{ form_row(formArticle.content, {'label': 'Contenu', 'attr': {'placeholder' : "Ajouter le contenu de l'article"}})}}
+</div>
+<div class="form-group">
+  {{ form_row(formArticle.image, {'label': 'Image', 'attr': {'placeholder' : "Télécharger une image"}})}}
+</div>
+<button   >Pré-visualiser</button>
+<button type="submit">Publier</button>
+{{ form_end(formArticle)}}
+
+{% endblock %}

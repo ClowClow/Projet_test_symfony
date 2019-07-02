@@ -1,0 +1,34 @@
+@import 'colors';
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.nav {
+  width: 100;
+  height: 9em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $light_blue;
+
+    .nav__item {
+      display: flex;
+      font-size: 1.5em;
+      .logo_principal {
+        width: 5em;
+        height: 5em;
+      }
+      & a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+}
+
+body {
+  text-align: center;
+}

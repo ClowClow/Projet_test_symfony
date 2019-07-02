@@ -1,0 +1,16 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+<section class="article">
+  <h2>{{article.title}}</h2>
+  <div class="metadata">
+    <p>Ecrit le {{ article.createdAt | date('d/m/Y')}}
+      à {{ article.createdAt | date('H:i')}}</p>
+  </div>
+  <div class="content">
+    <img src="{{ article.image}}"/>
+    {{ article.content | raw }}
+  </div>
+  <button class="retour_actu"><a href="{{ path('blog')}}">Retour au blog</a></button>
+</section>
+{% endblock %}
