@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion !{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -8,11 +8,12 @@
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
-    <label for="inputUsername" class="sr-only">Nom d'utilisateur</label>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-    <label for="inputPassword" class="sr-only">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <h1 class="login__title">Merci de vous connecter</h1>
+    <section class="login__form">
+    <label for="inputUsername" class="login__form__user">Nom d'utilisateur</label>
+    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" placeholder="Nom d'utilisateur" required autofocus>
+    <label for="inputPassword" class="login__form__password">Mot de passe</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de Passe" required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -32,5 +33,6 @@
     <button class="btn btn-lg btn-primary" type="submit">
         Sign in
     </button>
+  </section>
 </form>
 {% endblock %}
